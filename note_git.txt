@@ -1,0 +1,49 @@
+git bash提供类似Linux的git操作命令行
+git config user.name查看当前用户名(email同理)
+git config --global user.name '用户名' 全局地设置用户名(email同理)
+
+
+常用命令: mkdir cd pwd(查看当前路径)
+
+git init 在本地当前路径下初始化仓库，默认创建master分支
+仓库添加文件需要2步： git add <文件名> （可以add多个文件，以空格分隔）无回显，将文件添加到暂存区(stage)。
+                    git commit -m <"说明"> (commit运行一次可提交多个文件(add已添加的))，提交到当前分支
+git status查看当前仓库状态，可以看到未被提交的修改，git diff可以查看具体修改内容
+git log查看commit记录（由近及远）   --pretty=oneline简化输出信息
+
+HEAD表示当前版本 HEAD^表示上一个版本 HEAD^^上两个
+HEAD~100上100个版本
+git reset --hard HEAD^^ 回退到两个版本前
+git reset --hard <commit id> 回退到某版本
+git reset HEAD <file> 将文件从stage撤回工作区
+
+git reflog查看命令历史
+
+git checkout -- <file> 撤销未被commit的文件修改（如已经放在stage中，则撤销add后的修改）
+
+rm文件后，使用git rm和git commit同步到仓库；如果误删，可以git checkbox -- <file>恢复到仓库中文件的最新版本
+
+本地仓库绑定远程github新建仓库方法：{
+git remote add origin https://github.com/Gio-2020/<github仓库名>.git //origin是本地给远程库的别名
+git remoter rm origin 本地与远程解绑
+git remote -v 可查看绑定信息
+git push -u origin master 将本地当前maste推送给远程（第一次需要-u参数，后续本地修改后直接git push origin master）
+}
+
+克隆github仓库至本地
+git clone https://github.com/<账号名>/<仓库名>.git
+
+tips: push和clone时碰到error10054可以试试 git config --global http.sslVerify "false"
+或者rm origin再add origin 
+多试几次
+
+
+branch
+git branch <name> 创建分支
+git branch 查看分支
+git switch(checkout) <name> 切换至一个分支
+git merge <name> 将一个分支合并至当前分支
+git branch -d <name> 删除分支
+
+
+

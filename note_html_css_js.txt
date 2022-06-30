@@ -1,0 +1,8 @@
+note of html 开发环境:vscode
+1. <b>和<strong>在浏览器显示相同，不建议用<b>，最好通过font-weight设置粗体
+2. 注释/取消注释快捷键 ctrl + /
+3. ！+ 回车 生成<head>, <body>等结构
+4. ctrl + d 选中一行中同一字符
+5. 查看 自动换行
+
+音频标签 audio，controls属性显示播放组件(video同理)

@@ -1,0 +1,29 @@
+note of Vue2
+
+vue对象属性：el属性指定挂载点,data属性用于渲染（变量、数组、对象等）,methods绑定方法
+vue不要挂载在html或body中
+
+vue指令（元素的属性）
+v-text 通过标签属性渲染标签的全部文本，如需部分渲染使用{{}}
+v-html 类似v-text,渲染标签的innerHTML
+
+v-on 为元素（标签）绑定事件 使用@简写 事件名可参考 https://www.cnblogs.com/torchstar/p/11799394.html
+可使用事件修饰符 e.g.   @keyup.enter 按下回车后触发 https://cn.vuejs.org/v2/api/#v-on
+
+v-show 根据布尔表达式的值决定元素是否显示，原理是改变元素display属性
+v-if 类似v-show，原理是添加/移除DOM元素，内存消耗大于v-show
+
+v-bind 绑定元素属性
+用法    v-bind:属性名=" "  v-bind:alt="图片无法显示"
+简写    :属性名="   "       :alt="无法显示"
+切换class
+:class="{cat:judge}"    如果judge为true，则class绑定为cat
+
+v-for 根据数据生成列表，通常和数组结合
+v-for="(item,index) in 数组"
+
+v-model 获取/设置表单的值
+
+
+vue通过this修改数据内容
+vue中更改数组中元素 https://blog.csdn.net/weixin_38404899/article/details/97310298
